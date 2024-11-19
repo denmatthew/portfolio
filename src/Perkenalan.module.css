@@ -1,0 +1,45 @@
+.contacts {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contacts:hover {
+  background-color: #ff1414;
+}
+
+
+
+.aboutme {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.aboutme:hover {
+  background-color: #ff1414;
+}
+
+
+
+.projects {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.projects:hover {
+  background-color: #ff1414;
+}
