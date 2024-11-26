@@ -3,7 +3,7 @@ import fotodiri from "./images/denismatthewfotodiri.png"
 function AboutMe(){
   return(
     <>
-      <h1 className="judulaboutme">About Me</h1>
+      <h1 id="about-me" className="judulaboutme">About Me</h1>
       <div className="diri">
         <img src={fotodiri}></img>
         <p> Hello! My name is Denis Matthew, i am an active student at Tarumanagara University, majoring in Information Systems. With a 

@@ -1,6 +1,7 @@
 import Home from "./Home.jsx"
 import Projects from "./Projects.jsx"
 import AboutMe from "./AboutMe.jsx"
+import Footer from "./Footer.jsx"
 
 function App() {
   return(
@@ -8,6 +9,7 @@ function App() {
       <Home/>
       <AboutMe/>
       <Projects/>
+      <Footer/>
     </>
   );
 }

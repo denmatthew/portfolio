@@ -6,19 +6,29 @@
 
 html, body {
   font-family: 'Trebuchet MS', sans-serif;  
-  /* max-width: 1300px;
-  margin: 0 auto; */
   width: 100%;
+  scroll-behavior: smooth;
+}
+
+.container-header{
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgb(225, 234, 250), rgba(154, 188, 255, 0));
 }
 
 .navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 70px;
-  background: linear-gradient(to bottom, rgb(225, 234, 250), rgba(154, 188, 255, 0));
+  width: 1100px;
+}
 
+.navbar-kiri{
+  width: 200px;
+  margin-left: 50px;
+  text-align: left;
 }
 
 .navbar a{
@@ -27,15 +37,11 @@ html, body {
   font-weight: bolder;
 }
 
-.navbar-kiri{
-  width: 200px;
-  margin-left: 100px;
-  text-align: left;
-}
 
 .navbar-kiri a{
-  font-size: 20px;
+  font-size: 22px;
 }
+
 
 .navbar-kanan{
   width: 500px;
@@ -43,10 +49,80 @@ html, body {
   margin-right: 20px;
 }
 
+
+.tombolMenu {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #3898ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.tombolMenu.active {
+  transform: rotate(180deg);
+}
+
+/* Side Menu */
+.sideMenu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #5bcbf3;
+  color: rgb(255, 255, 255);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: right 0.3s ease;
+  z-index: 1;
+}
+
+.sideMenu.open {
+  right: 0;
+}
+
+.sideMenu nav {
+  margin: 0 20px;
+}
+
+.sideMenu h3 {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.sideMenu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sideMenu ul li {
+  margin: 10px 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
 .navbar-kanan a{
   margin-right: 20px;
   font-size: 16px;
 }
+
+
+
+
 
 .Perkenalan{
   width: 100%;
@@ -91,6 +167,7 @@ html, body {
 }
 
 .judulaboutme{
+  margin-top: 75px;
   text-align: center;
   margin-bottom: 25px;
 }
@@ -119,9 +196,73 @@ html, body {
 
 .judulprojek{
   text-align: center;
+  font-size: 40px;
   margin-top: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
+
+.container-collapse{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.collapse-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tombolcollapse{
+  width: auto;
+}
+
+
+.tombolcollapse button{
+  background-color: white;
+  margin-bottom: 20px;
+  width: 900px;
+  height: 70px;
+  font-size: 50px;
+  border: none;
+  cursor: pointer;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  transition: background-color 0.4s ease;
+}
+
+.tombolcollapse button:hover{
+  background-color: #333;
+  color: white
+}
+
+
+.style-card {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+}
+
+/* Saat card ditampilkan */
+.style-card.show {
+  opacity: 1;
+  max-height: 500px; /* Atur sesuai tinggi konten */
+  transform: translateY(0);
+}
+
+/* Saat card disembunyikan */
+.style-card.hide {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-10px);
+}
+
 
 .card-container {
   display: flex;
@@ -134,11 +275,16 @@ html, body {
 
 .cards{
   margin: 2px;
+  display: flex;
+  flex-direction: row;
   text-align: center;
-  width: 350px;
+  width: 900px;
 }
 
-
+.cards .media {
+  position: relative;
+  width: 100%;
+}
 
 .cards .media {
   position: relative;
@@ -146,7 +292,7 @@ html, body {
 }
 
 .cards .card-image {
-  width: 100%;
+  width: 300px;
   height: 100%;
   object-fit: cover;
   transition: opacity 0.3s ease;
@@ -157,7 +303,7 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 300px;
   height: 100%;
   object-fit: cover;
   opacity: 0;
@@ -170,6 +316,19 @@ html, body {
 
 .cards:hover .card-video {
   opacity: 1;
+}
+
+.text-content{
+  margin-left: 30px
+}
+
+.text-content h3{
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.text-content p{
+  text-align: left;
 }
 
 

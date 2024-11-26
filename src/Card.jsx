@@ -7,8 +7,10 @@ function Card(props){
         <img src={props.image} alt="profile picture" className="card-image"></img>
         <video src={props.video} autoPlay className="card-video" loop muted></video>
       </div>
-      <h3>{props.judul}</h3>
-      <p>{props.deskripsi}</p>
+      <div className='text-content'>
+        <h3>{props.judul}</h3>
+        <p>{props.deskripsi}</p>
+      </div>
     </div>
   );
 }
